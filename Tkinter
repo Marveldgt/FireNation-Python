@@ -1,0 +1,4 @@
+import pygame 
+pygame.mixer.init(18000,-16,2,1024) 
+sound = pygame.mixer.Sound('/storage/emulated/0/Python/alarm.wav') 
+sound.play()
