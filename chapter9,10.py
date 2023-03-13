@@ -43,22 +43,24 @@ for a in range(1,1000):
 
 '''Pascal’s triangle is shown below. On the outside are 1’s and each other number is the sum of the two numbers directly above it. Write a program to generate Pascal’s triangle. Allow the user to specify the number of rows. Be sure that it is nicely formatted, like below'''
 
-from math import factorial
- 
-# input n
 
-n = int(input('enter number of rows: '))
+def fact(n):
+         k=1
+         if n==1 or n==0:
+             return k
+         else:
+             return n*fact(n-1)
 
-for i in range(n):
-
-    for j in range(n-i+1):
-
-        print(end=" ")
-    for j in range(i+1):
-        # nCr = n!/((n-r)!*r!)
-        print(factorial(i)//(factorial(j)*factorial(i-j)), end=" ")
- 
-
-    # for new line
-
+num = int(input('enter number of rows: '))
+for i in range(0,num+1):
+    k= fact(i)
+    for j in range(num-i+1):
+        print(end=' ')
+    for j in range(0,i+1):
+            l=i-j
+            a= fact(l)
+            b=fact(j)
+            g=k//(a*b)
+            print(g,end=' ')
+            
     print()
